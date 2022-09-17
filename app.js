@@ -2,6 +2,9 @@ const tax = 0.18;
 const shipping = 15;
 
 document.querySelector(".products").onclick = (e) => {
+  window.onload = () => {
+    cartTotal();
+  };
   if (e.target.className === "fas fa-minus") {
     if (e.target.parentElement.nextElementSibling.innerText > 1) {
       e.target.parentElement.nextElementSibling.innerText--;
@@ -29,8 +32,10 @@ document.querySelector(".products").onclick = (e) => {
 };
 
 let productTotal = (e, b) => {
-  let productPrice = b.children[1].children[0].firstChild.innerText;
+  let productPrice =
+    b.children[1].children[0].firstChild.nextElementSibling.innerText;
   let productTotal = b.children[4];
+  //   console.log(productPrice.innerText, productTotal.innerText);
   let amount = e;
   productTotal.innerText = (productPrice * amount).toFixed(2);
 
