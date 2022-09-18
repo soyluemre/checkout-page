@@ -14,7 +14,7 @@ document.querySelector(".products").onclick = (e) => {
         e.target.parentElement.parentElement.parentElement
       );
     } else {
-      if (confirm("Produkt wird gelöscht?")) {
+      if (confirm("The Product Will be Removed..?")) {
         e.target.parentElement.parentElement.parentElement.parentElement.remove();
         cartTotal();
       }
